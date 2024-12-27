@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 
-type RequestHandler = (req: Request, res: Response, next: NextFunction) => Response;
+type RequestHandler = (req: Request, res: Response, next: NextFunction) => Promise<Response>;
 
 const asyncHandler = (requestHandler: RequestHandler) => {
     return (req: Request, res: Response, next: NextFunction) => {
